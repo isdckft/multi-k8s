@@ -3,10 +3,10 @@ language: generic
 
 services:
   - docker
-  # Log in to the docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 before_install:
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker build -t isdckft/react-test -f ./client/Dockerfile.dev ./client
 
 script:
