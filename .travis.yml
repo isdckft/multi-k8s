@@ -3,6 +3,8 @@ language: generic
 
 services:
   - docker
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 before_install:
   - docker build -t isdckft/react-test -f ./client/Dockerfile.dev ./client
@@ -15,8 +17,7 @@ after_success:
   - docker build -t isdckft/multi-nginx ./nginx
   - docker build -t isdckft/multi-server ./server
   - docker build -t isdckft/multi-worker ./worker
-  # Log in to the docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
   # Take those images and push them to docker hub
   - docker push isdckft/multi-client
   - docker push isdckft/multi-nginx
