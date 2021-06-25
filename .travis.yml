@@ -19,6 +19,7 @@ after_success:
   - docker build -t isdckft/multi-worker ./worker
 
   # Take those images and push them to docker hub
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push isdckft/multi-client
   - docker push isdckft/multi-nginx
   - docker push isdckft/multi-server
