@@ -21,7 +21,7 @@ function App() {
           </a>
           <h1> Hello, Welcome to AWS</h1>
           <Link to="/">Home</Link>
-          <Link to="/otherpage">Másik oldal</Link>
+          <Link to="/otherpage">Másik oldal- Kubernetesen</Link>
         </header>
         <div>
           <Route exact path="/" component={Fib} />
