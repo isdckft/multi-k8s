@@ -19,9 +19,9 @@ function App() {
           >
             Learn React
           </a>
-          <h1> Hello, Welcome to AWS</h1>
+          <h1> Hello, Welcome to GCP !!!, Hurray</h1>
           <Link to="/">Home</Link>
-          <Link to="/otherpage">Másik oldal- Kubernetesen</Link>
+          <Link to="/otherpage">Other page</Link>
         </header>
         <div>
           <Route exact path="/" component={Fib} />
